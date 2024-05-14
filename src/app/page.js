@@ -21,10 +21,10 @@ const Home = () => {
             quibusdam ducimus quidem quae voluptates numquam maxime possimus illum
             eveniet vitae reiciendis quasi, fugiat assumenda veritatis nam culpa in!
             Quo, dolorum.</p>
-          <button
+          <a href="./thread"
             className="items-center text-2xl bg-custom-green hover:bg-slate-600 text-white font-medium py-3 px-10 rounded-3xl">
             Ayo Join
-          </button>
+          </a>
         </div>
         <div class="flex justify-end">
           <img src="/main.png" class="w-4/5 self-end" />
@@ -32,7 +32,7 @@ const Home = () => {
 
       </div>
 
-      <div className="my-32 p-5 bg-custom-grey1 flex rounded-full ">
+      <div className="my-32 p-5 bg-custom-grey1 flex rounded-full " id="about">
         <h1
           className="p-24 w-3/4 font-bold text-5xl text-custom-green w-1/2 bg-white rounded-l-full">About
           Company</h1>
@@ -42,7 +42,7 @@ const Home = () => {
           nec lorem eget dictumst. Risus in gravida eu, enim lorem. </p>
       </div>
 
-      <h1 className=" text-5xl font-bold text-custom-green center  text-center">Mekanisme</h1>
+      <h1 className=" text-5xl font-bold text-custom-green center  text-center" id="instruction">Mekanisme</h1>
       <div className="  w-full flex justify-center items-center">
 
         {/* stack 1 */}

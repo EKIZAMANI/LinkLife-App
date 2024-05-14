@@ -18,7 +18,7 @@ const Login = () => {
 
 
                 </div>
-                <p className="text-l py-2 text-center">Belum punya akun? <a href="#" className=" font-bold">Daftar disini</a></p>
+                <p className="text-l py-2 text-center">Belum punya akun? <a href="./register" className=" font-bold">Daftar disini</a></p>
             </div>
 
         </div>

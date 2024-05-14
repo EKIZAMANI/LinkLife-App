@@ -30,7 +30,7 @@ const Register = () => {
 
 
                 </div>
-                <p className="text-l py-2 text-center">Sudah punya akun? <a href="#" className=" font-bold">Masuk disini</a></p>
+                <p className="text-l py-2 text-center">Sudah punya akun? <a href="./login" className=" font-bold">Masuk disini</a></p>
             </div>
 
         </div>
