@@ -1,6 +1,6 @@
 const Login = () => {
     return (
-        <div className="h-screen flex justify-center items-center ">
+        <form className="h-screen flex justify-center items-center ">
             <div className="w-1/3  bg-custom-grey1 items-center  rounded-xl p-8">
                 <p className=" text-xl font-bold text-center">LOGIN</p>
 
@@ -21,7 +21,7 @@ const Login = () => {
                 <p className="text-l py-2 text-center">Belum punya akun? <a href="./register" className=" font-bold">Daftar disini</a></p>
             </div>
 
-        </div>
+        </form>
     )
 }
 

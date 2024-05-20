@@ -1,11 +1,11 @@
 const Register = () => {
     return (
-        <div className="h-screen flex justify-center items-center ">
+        <form className="h-screen flex justify-center items-center ">
             <div className="w-1/3  bg-custom-grey1 items-center  rounded-xl p-8">
                 <p className=" text-xl font-bold text-center">REGISTER</p>
 
 
-                <p className="text-l py-2">Nama Lengkat :</p>
+                <p className="text-l py-2">Nama Lengkap :</p>
                 <input type="text" name="name" id="name" placeholder="name" className="w-full p-2 rounded-lg"></input>
 
                 <p className="text-l py-2">Tanggal Lahir :</p>
@@ -33,7 +33,7 @@ const Register = () => {
                 <p className="text-l py-2 text-center">Sudah punya akun? <a href="./login" className=" font-bold">Masuk disini</a></p>
             </div>
 
-        </div>
+        </form>
     )
 }
 
