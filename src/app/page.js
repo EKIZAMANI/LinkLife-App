@@ -1,7 +1,5 @@
-import Image from "next/image";
-
 const Home = () => {
-  return (
+  return  (
     <div className="px-24 pb-16">
       <div className=" pt-12 flex justify-between">
         <div className="w-1/2">

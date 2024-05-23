@@ -5,24 +5,24 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="px-24 bg-white flex justify-between items-center gap-5   ">
+            <div className="flex items-center justify-between gap-5 px-24 bg-white ">
                 <div className="flex items-center ">
                     <img src="/logo.png" />
-                    <p className="text-4xl font-bold pl-3">LinkLife</p>
+                    <p className="pl-3 text-4xl font-bold">LinkLife</p>
                 </div>
 
-                <div className="flex items-center  gap-10">
+                <div className="flex items-center gap-10">
                     <a href="/">Home</a>
                     <a href="/#about">About</a>
                     <a href="/#instruction">Instruction</a>
-                    <Link href="/login"
-                        className="items-center bg-custom-green hover:bg-slate-600 text-white font-medium py-2 px-5 rounded-xl" replace>
+                    <a href="/login"
+                        className="items-center px-5 py-2 font-medium text-white bg-custom-green hover:bg-slate-600 rounded-xl" replace>
                         Sign In
-                    </Link>
+                    </a>
                 </div>
 
             </div>
-            <hr className="border-gray-300 w-full border-t-4" />
+            <hr className="w-full border-t-4 border-gray-300" />
 
 
         </div>
