@@ -25,7 +25,6 @@ export async function POST(request) {
 
         if (getUser) {
             const data = {
-                // title: getUser[0].name,
                 description,
                 blood_group,
                 history,

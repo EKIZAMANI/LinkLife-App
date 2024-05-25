@@ -11,7 +11,7 @@ export async function POST(request) {
     });
 
     if (loginAccount.length == 1) {
-        return Response.json({status: 200, isLogin: true, id: loginAccount[0].id})
+        return Response.json({status: 200, isLogin: true, id: loginAccount[0].id, name: loginAccount[0].name})
     } else {
         return Response.json({status: 500, isLogin: false})
     }

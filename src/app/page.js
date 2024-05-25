@@ -32,7 +32,7 @@ const Home = () => {
 
       <div className="my-32 p-5 bg-custom-grey1 flex rounded-full " id="about">
         <h1
-          className="p-24 w-3/4 font-bold text-5xl text-custom-green w-1/2 bg-white rounded-l-full">About
+          className="p-24 font-bold text-5xl text-custom-green w-1/2 bg-white rounded-l-full">About
           Company</h1>
         <p className="p-24 text-2xl ">Link Life adalah aplikasi yang dapat Lorem
           ipsum dolor sit amet,
