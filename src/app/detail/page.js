@@ -35,35 +35,35 @@ const Detail = () => {
         if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
             age--;
         }
-        return age + " tahun";
+        return age;
     }
 
     const deleteThread = async (event) => {
         event.preventDefault();
-    
+
         const response = await fetch(`/api/Delete?id=${id}&type=thread`, {
             method: 'POST'
         });
-    
+
         if (response.ok) {
             window.location.href = '/thread'
         }
     };
-    
+
     const deleteComment = async (event) => {
         event.preventDefault();
         const userId = parseInt(localStorage.getItem('userId'));
         const response = await fetch(`/api/Delete?id=${id}&type=comment&userid=${userId}`, {
             method: 'POST'
         });
-    
+
         if (response.ok) {
             window.location.href = `/detail?id=${id}`;
         } else {
             console.error('Failed to delete comment');
         }
     };
-    
+
 
     useEffect(() => {
         handleDetail();
@@ -77,9 +77,9 @@ const Detail = () => {
                 <div className="">
                     <h1 className="pb-3 text-2xl font-medium">{thread.title}</h1>
                     <p className="text-xl">
-                        <span className="inline-block w-48">Nama</span>: {user.name}
+                        <span className="inline-block ">{user.name}, seorang individu berusia {calculateAge(user.birth_date)} tahun, dengan golongan darah {thread.blood_group}, riwayat penyakit {thread.history}, dapat menerima bantuan dari lokasi {thread.location}. Dengan tulus hati, ia memohon bantuan dari para dermawan untuk memberikan bantuan darah. Setiap tetes darah yang diberikan akan sangat berarti bagi {user.name} dalam memperoleh kembali kesehatannya. Mari bersama-sama membantu {user.name} melalui tindakan kebaikan ini</span>
                     </p>
-                    <p className="text-xl">
+                    {/* <p className="text-xl">
                         <span className="inline-block w-48">Usia</span>: {calculateAge(user.birth_date)}
                     </p>
                     <p className="text-xl">
@@ -93,7 +93,7 @@ const Detail = () => {
                     </p>
                     <p className="text-xl">
                         <span className="inline-block w-48">Deskripsi</span>: {thread.description}
-                    </p>
+                    </p> */}
                 </div>
             </div>
 
@@ -130,23 +130,9 @@ const Detail = () => {
                 <div className="w-full p-5 mb-5 border rounded-lg ps-10 border-custom-green">
                     <div className="">
                         <p className="text-xl">
-                            <span className="inline-block w-48">Nama</span>: {comment.name}
+                            <span className="inline-block ">{comment.name}, seorang individu berusia {calculateAge(comment.birth_date)} tahun, memiliki semangat yang tinggi untuk berkontribusi dalam kegiatan donor darah. Dengan golongan darah {comment.blood_group} dan riwayat penyakit {comment.history}, {comment.name} siap memberikan dukungannya. Jadwalnya telah ditentukan pada {new Date(comment.time).toString()}, dan ia siap hadir dengan penuh semangat untuk memberikan darahnya kepada yang membutuhkan</span>
                         </p>
-                        <p className="text-xl">
-                            <span className="inline-block w-48">Usia</span>: {calculateAge(comment.birth_date)}
-                        </p>
-                        <p className="text-xl">
-                            <span className="inline-block w-48">Golongan Darah</span>: {comment.blood_group}
-                        </p>
-                        <p className="text-xl">
-                            <span className="inline-block w-48">Riwayat Penyakit</span>: {comment.history}
-                        </p>
-                        <p className="text-xl">
-                            <span className="inline-block w-48">Jadwal</span>: {Date(comment.time)}
-                        </p>
-                        <p className="text-xl">
-                            <span className="inline-block w-48">Deskripsi</span>: {comment.description}
-                        </p>
+
                     </div>
 
                     {parseInt(localStorage.getItem('userId')) === thread.user_id && (

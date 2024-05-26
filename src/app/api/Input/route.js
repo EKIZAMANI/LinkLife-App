@@ -4,8 +4,8 @@ export async function POST(request) {
     const type = new URL(request.url).searchParams.get('type')
 
     if (type == "new") {
-        const { title, description, blood_group, history, location, user_id } = await request.json();
-        const data = { title, description, blood_group, history, location, user_id };
+        const { title, blood_group, history, location, user_id } = await request.json();
+        const data = { title, blood_group, history, location, user_id };
 
         const createThread = await prisma.thread.create({ data });
 
@@ -15,7 +15,7 @@ export async function POST(request) {
             return Response.json({ status: 500, isCreated: false })
         }
     } else if (type == "reply") {
-        const { description, blood_group, history, time, thread_id, user_id } = await request.json();
+        const { blood_group, history, time, thread_id, user_id } = await request.json();
 
         const getUser = await prisma.user.findMany({
             where: {
@@ -25,7 +25,6 @@ export async function POST(request) {
 
         if (getUser) {
             const data = {
-                description,
                 blood_group,
                 history,
                 time: new Date(time),

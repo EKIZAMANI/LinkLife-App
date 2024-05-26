@@ -17,6 +17,17 @@ const Thread = () => {
         }
     }
 
+    const calculateAge = (birthdate) => {
+        const today = new Date();
+        const birthDate = new Date(birthdate);
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDiff = today.getMonth() - birthDate.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age;
+    }
+
     useEffect(() => {
         handleThread()
     }, [])
@@ -44,7 +55,7 @@ const Thread = () => {
                         <a key={index} href={`/detail?id=${thread.id}`} className="relative flex w-full p-4 my-5 text-sm border rounded-lg ps-10 border-custom-green hover:bg-custom-grey1">
                             <div className="w-4/5">
                                 <h1 className="pb-3 text-2xl font-medium">{thread.title}</h1>
-                                <p className="text-xl text-justify">{thread.user_name} : {thread.description}</p>
+                                <p className="text-xl text-justify">{thread.user_name} : Seseorang berusia {calculateAge(thread.user_birth)} tahun, dengan golongan darah {thread.blood_group}, riwayat penyakit {thread.history}, dapat menerima bantuan dari lokasi {thread.location}</p>
                             </div>
 
                             <div className="absolute bottom-4 right-4 flex items-center justify-center h-10 p-2 rounded-lg bg-custom-grey1">

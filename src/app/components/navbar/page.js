@@ -45,11 +45,8 @@ const Navbar = () => {
     } else {
         return (
             <div>
-                <div className="flex items-center justify-between gap-5 px-24 bg-white ">
-                    <div className="flex items-center ">
-                        <img src="/logo.png" />
-                        <p className="pl-3 text-4xl font-bold">LinkLife</p>
-                    </div>
+                <div className="h-16 flex items-center  gap-5 px-24 bg-white justify-end ">
+
 
                     <div className="flex items-center gap-10">
                         <a href="/">Home</a>
@@ -61,8 +58,15 @@ const Navbar = () => {
                         </a> */}
                         <button
                             onClick={() => setDropdownOpen(!dropdownOpen)}
-                            className="items-center px-5 py-2 font-medium text-white bg-custom-green hover:bg-slate-600 rounded-xl">
-                            {userName}
+                            className="items-center px-5 py-2 font-bold text-xl text-custom-green  ">
+                            Hi, {userName}
+
+                            {!dropdownOpen && (
+                                <span className="text-sm ps-1">▼</span>
+                            )}
+                            {dropdownOpen && (
+                                <span className="text-sm ps-1">▲</span>
+                            )}
                         </button>
 
                         {dropdownOpen && (

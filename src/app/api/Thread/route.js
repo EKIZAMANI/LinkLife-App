@@ -13,13 +13,16 @@ export async function GET() {
             },
             select: {
                 id: true,
-                name: true
+                name: true,
+                birth_date: true
             }
         })
 
         const userIdToNameMap = {}
+        const userIdToBirthMap = {}
         getUserNames.forEach(user => {
-            userIdToNameMap[user.id] = user.name
+            userIdToNameMap[user.id] = user.name,
+                userIdToBirthMap[user.id] = user.birth_date
         })
 
         const getCommentCounts = await prisma.comment.groupBy({
@@ -40,6 +43,7 @@ export async function GET() {
         const threadsWithDetails = getThreads.map(thread => ({
             ...thread,
             user_name: userIdToNameMap[thread.user_id],
+            user_birth: userIdToBirthMap[thread.user_id],
             comment_count: threadIdToCommentCountMap[thread.id] || 0
         }))
 

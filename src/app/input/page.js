@@ -4,7 +4,6 @@ import React, { useState } from "react"
 const Input = () => {
     const [historySelect, setHistorySelect] = useState("")
     const [title, setTitle] = useState("")
-    const [description, setDescription] = useState("")
     const [bloodGroup, setBloodGroup] = useState("")
     const [history, setHistory] = useState("")
     const [location, setLocation] = useState("")
@@ -24,7 +23,6 @@ const Input = () => {
         if (type == "new") {
             data = {
                 title,
-                description,
                 blood_group: bloodGroup,
                 history,
                 location,
@@ -32,7 +30,6 @@ const Input = () => {
             }
         } else {
             data = {
-                description,
                 blood_group: bloodGroup,
                 history,
                 time: new Date(time),
@@ -49,13 +46,11 @@ const Input = () => {
         })
 
         if (response.ok) {
-            const input = await response.json()
-            console.log("Error:", input)
+            await response.json()
             if (type == "new") window.location.href = '/thread'
             else if (type == "reply") window.location.href = `/detail?id=${id}`
         } else {
             alert("LOL")
-            console.log("Error:", response.message)
         }
     }
 
@@ -80,19 +75,7 @@ const Input = () => {
                     </div>
                 )}
 
-                <p
-                    className="py-1 text-l">
-                    Deskripsi :
-                </p>
 
-                <input
-                    type="text"
-                    name="description"
-                    id="description"
-                    placeholder="description"
-                    className="w-full p-2 mb-2 rounded-lg"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)} />
 
                 <p
                     className="py-1 text-l">

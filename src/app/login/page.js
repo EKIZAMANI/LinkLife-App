@@ -84,15 +84,10 @@ const Login = () => {
                             className="px-5 py-2 font-bold text-white rounded-lg bg-custom-green hover:bg-slate-600" />
                     </div>
 
-                    <p
-                        className="py-2 text-center text-l">
-                        Belum punya akun?
 
-                        <a
-                            href="./register"
-                            className="font-bold">
-                            Daftar disini
-                        </a>
+                    <p className="py-2 text-center text-l">
+                        Belum punya akun?
+                        <a href="./register" className="font-bold"> Daftar disini</a>
                     </p>
                 </div>
             </form>

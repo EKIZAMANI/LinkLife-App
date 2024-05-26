@@ -25,7 +25,6 @@ model User {
 model Thread {
   id           Int      @id @default(autoincrement())
   title        String
-  description  String
   blood_group  String
   history      String
   location     String
@@ -34,7 +33,6 @@ model Thread {
 
 model Comment {
   id           Int      @id @default(autoincrement())
-  description  String
   blood_group  String
   history      String
   time         DateTime
