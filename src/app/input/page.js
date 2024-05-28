@@ -262,18 +262,18 @@ const Input = () => {
                                 </option>
 
                                 <option
-                                    value="Aceh Timur">
-                                    Aceh Timur
+                                    value="UDD PMI Kabupaten Aceh Timur">
+                                    UDD PMI Kabupaten Aceh Timur
                                 </option>
 
                                 <option
-                                    value="Aceh Utara">
-                                    Aceh Utara
+                                    value="UDD PMI Kabupaten Aceh Utara">
+                                    UDD PMI Kabupaten Aceh Utara
                                 </option>
 
                                 <option
-                                    value="Banda Aceh">
-                                    Banda Aceh
+                                    value="UDD PMI Kota Banda Aceh">
+                                    UDD PMI Kota Banda Aceh
                                 </option>
                             </select>
                         </div>

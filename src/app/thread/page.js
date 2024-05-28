@@ -26,7 +26,7 @@ const Thread = () => {
         if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
             age--;
         }
-        
+
         return age;
     }
 
@@ -46,7 +46,18 @@ const Thread = () => {
                             </svg>
                         </div>
                         <input type="search" id="default-search" className="block w-full p-4 text-sm border rounded-lg ps-10 border-custom-green focus:ring-blue-500 focus:border-blue-500 " placeholder="Search Mockups, Logos..." required />
-                        <a href="/input?type=new" type="submit" className="text-white absolute end-2.5 bottom-2 bg-custom-green hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">New Post</a>
+
+                        <div class="relative">
+                            <div class="absolute bottom-2 right-2.5 flex space-x-4">
+                                <a href="/input?type=new" className="text-white bg-custom-green hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">
+                                    New Post
+                                </a>
+                                <a href="#" className="bg-custom-grey1 hover:bg-custom-grey2 rounded-lg px-2 py-2">
+                                    <img className="w-6 pe-1" src="search.png" alt="Search" />
+                                </a>
+
+                            </div>
+                        </div>
                     </div>
                 </form>
 
