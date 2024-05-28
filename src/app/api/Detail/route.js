@@ -49,7 +49,17 @@ export async function GET(request) {
                     birth_date: birthDate[comment.user_id]
                 }))
 
-                return new Response(JSON.stringify({ status: 200, thread: getThreads[0], user: getUser[0], comment: commentWithUser }))
+                const getRequest = await prisma.request.findMany({
+                    where: {
+                        thread_id: getThreads[0].id
+                    }
+                })
+
+                if (getRequest.length == 1) {
+                    return new Response(JSON.stringify({ status: 200, thread: getThreads[0], user: getUser[0], comment: commentWithUser, isRequest: true, request: getRequest[0]}))
+                } else {
+                    return new Response(JSON.stringify({ status: 200, thread: getThreads[0], user: getUser[0], comment: commentWithUser, isRequest: false }))
+                }
             }
         } else {
             return new Response(JSON.stringify({ status: 404, message: 'No user found' }))

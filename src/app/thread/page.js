@@ -22,9 +22,11 @@ const Thread = () => {
         const birthDate = new Date(birthdate);
         let age = today.getFullYear() - birthDate.getFullYear();
         const monthDiff = today.getMonth() - birthDate.getMonth();
+
         if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
             age--;
         }
+        
         return age;
     }
 
@@ -32,7 +34,7 @@ const Thread = () => {
         handleThread()
     }, [])
 
-    if (localStorage.getItem('userId') != null) {
+    if (localStorage.getItem('userId') && localStorage.getItem('userRole') == 'user') {
         return (
             <div className="px-24 py-10">
                 <form className="bg-custom-grey2">
@@ -58,7 +60,7 @@ const Thread = () => {
                                 <p className="text-xl text-justify">{thread.user_name} : Seseorang berusia {calculateAge(thread.user_birth)} tahun, dengan golongan darah {thread.blood_group}, riwayat penyakit {thread.history}, dapat menerima bantuan dari lokasi {thread.location}</p>
                             </div>
 
-                            <div className="absolute bottom-4 right-4 flex items-center justify-center h-10 p-2 rounded-lg bg-custom-grey1">
+                            <div className="absolute flex items-center justify-center h-10 p-2 rounded-lg bottom-4 right-4 bg-custom-grey1">
                                 <img className="w-6 pe-1" src="coment.png" alt="Comment Icon" />
                                 <p className="text-xl">{thread.comment_count}</p>
                             </div>

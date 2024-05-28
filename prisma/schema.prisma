@@ -20,6 +20,7 @@ model User {
   email        String   @unique
   handphone_no String
   password     String
+  role         String
 }
 
 model Thread {
@@ -38,4 +39,11 @@ model Comment {
   time         DateTime
   thread_id    Int
   user_id      Int
+}
+
+model Request {
+  id           Int      @id @default(autoincrement())
+  status       String
+  thread_id    Int      @unique
+  comment_id   Int      @unique
 }

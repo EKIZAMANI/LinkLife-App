@@ -24,9 +24,12 @@ const Login = () => {
             if (login.isLogin) {
                 localStorage.setItem('userId', login.id)
                 localStorage.setItem('userName', login.name)
-                window.location.href = '/thread'
+                localStorage.setItem('userRole', login.role)
+                if (login.role == 'user') window.location.href = '/thread'
+                else if (login.role == 'admin') window.location.href = '/admin/request'
             } else {
                 alert('Error is not login')
+                console.log(login)
             }
         } else {
             alert('Error response is not ok')
@@ -92,7 +95,9 @@ const Login = () => {
                 </div>
             </form>
         )
-    } else {
+    } else if (localStorage.getItem('userId') && localStorage.getItem('userRole') == 'admin') {
+        window.location.href = '/admin/request'
+    } else if (localStorage.getItem('userId') && localStorage.getItem('userRole') == 'user') {
         window.location.href = '/thread'
     }
 }
