@@ -37,29 +37,28 @@ const Thread = () => {
     if (localStorage.getItem('userId') && localStorage.getItem('userRole') == 'user') {
         return (
             <div className="px-24 py-10">
-                <form className="bg-custom-grey2">
-                    <label htmlFor="default-search" className="mb-2 text-sm font-medium sr-only">Search</label>
-                    <div className="relative">
-                        <div className="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
-                            <svg className="w-4 h-4 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                            </svg>
-                        </div>
-                        <input type="search" id="default-search" className="block w-full p-4 text-sm border rounded-lg ps-10 border-custom-green focus:ring-blue-500 focus:border-blue-500 " placeholder="Search Mockups, Logos..." required />
+                <div className="flex w-full gap-x-2.5 content-center">
+                    <form className="flex-grow bg-custom-grey2">
+                        <label htmlFor="default-search" className="mb-2 text-sm font-medium sr-only">Search</label>
+                        <div className="relative">
+                            <div className="inset-y-0 flex items-center pointer-events-none start-0 ps-3">
 
-                        <div class="relative">
-                            <div class="absolute bottom-2 right-2.5 flex space-x-4">
-                                <a href="/input?type=new" className="text-white bg-custom-green hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">
-                                    New Post
-                                </a>
+                            </div>
+                            <input type="search" id="default-search" className="block w-full p-4 text-sm border rounded-lg ps-10 border-custom-green focus:ring-blue-500 focus:border-blue-500" placeholder="Pencarian..." required />
+                            <div className="absolute bottom-2 right-2.5 flex space-x-4">
                                 <a href="#" className="bg-custom-grey1 hover:bg-custom-grey2 rounded-lg px-2 py-2">
                                     <img className="w-6 pe-1" src="search.png" alt="Search" />
                                 </a>
-
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                    <a href="/input?type=new" className="self-center text-white bg-custom-green hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-3">
+                        Buat Post
+                    </a>
+                </div>
+
+
+
 
                 <h1 className="pt-5 text-center text-l">Ayo Bantu Pendonoran darah...</h1>
 
